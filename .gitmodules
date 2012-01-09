@@ -1,0 +1,36 @@
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/gundo"]
+	path = vim/bundle/gundo
+	url = https://github.com/sjl/gundo.vim.git
+[submodule "vim/bundle/pep8"]
+	path = vim/bundle/pep8
+	url = https://github.com/nvie/vim-pep8.git
+[submodule "vim/bundle/yankring"]
+	path = vim/bundle/yankring
+	url = https://github.com/chrismetcalf/vim-yankring.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim
+[submodule "vim/bundle/l9"]
+	path = vim/bundle/l9
+	url = https://github.com/vim-scripts/L9.git
+[submodule "vim/bundle/fuzzy"]
+	path = vim/bundle/fuzzy
+	url = https://github.com/vim-scripts/FuzzyFinder.git
+[submodule "vim/bundle/pyflakes"]
+	path = vim/bundle/pyflakes
+	url = https://github.com/nvie/vim-pyflakes.git
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/snipmate_for_django"]
+	path = vim/bundle/snipmate_for_django
+	url = https://github.com/robhudson/snipmate_for_django.git
