@@ -86,8 +86,12 @@ set clipboard+=+
 " command-line editing
 set wildmenu
 set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv
-set wildignore+=*.ogg,*.mp3,*.mov,*.class,*/.git/*,*/.hg/*,*/.svn/*
+set wildignore+=*.ogg,*.mp3,*.mov,*.class,*/.hg/*,*/.svn/*
 set wildmode=list:longest
+
+" we can't add this to wildignore, seems like fugitive has problems
+" with it.
+let g:ctrlp_custom_ignore = '\.git$'
 
 ";;;;; color scheme ;;;;;"
 
