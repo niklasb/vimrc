@@ -96,11 +96,11 @@ set wildmode=list:longest
 ";;;;; color scheme ;;;;;"
 
 if has("gui_running")
-    colorscheme molokai
-    set guicursor=a:block-Cursor
-    set guicursor+=n-v:blinkon0  " cursors shouldn't blink.
+  colorscheme molokai
+  set guicursor=a:block-Cursor
+  set guicursor+=n-v:blinkon0  " cursors shouldn't blink.
 else
-    colorscheme slate
+  colorscheme slate
 endif
 
 
