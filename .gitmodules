@@ -67,3 +67,6 @@
 [submodule "vim/bundle/rails"]
 	path = vim/bundle/rails
 	url = https://github.com/tpope/vim-rails.git
+[submodule "vim/bundle/c"]
+	path = vim/bundle/c
+	url = https://github.com/vim-scripts/c.vim.git
