@@ -16,7 +16,7 @@ set encoding=utf-8
 set ttyfast
 set lazyredraw
 
-set autoread
+"set autoread
 
 set relativenumber
 
