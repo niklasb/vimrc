@@ -1,4 +1,5 @@
 
+
 """""""""""" General """"""""""
 
 set nocompatible
@@ -128,7 +129,7 @@ set nostartofline
 set backspace=indent,eol,start
 
 " figure indentation on opening
-autocmd BufReadPost * :DetectIndent
+autocmd BufReadPost * :YAIFAMagic
 
 " strip trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e

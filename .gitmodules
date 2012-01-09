@@ -58,3 +58,6 @@
 [submodule "vim/bundle/scratch"]
 	path = vim/bundle/scratch
 	url = https://github.com/duff/vim-scratch.git
+[submodule "vim/bundle/yaifa"]
+	path = vim/bundle/yaifa
+	url = https://github.com/Raimondi/YAIFA.git
