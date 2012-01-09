@@ -52,3 +52,6 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "vim/bundle/detectindent"]
+	path = vim/bundle/detectindent
+	url = https://github.com/ciaranm/detectindent.git

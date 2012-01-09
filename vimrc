@@ -127,6 +127,9 @@ set whichwrap+=<,>,[,],h,l  " backspace and cursor can go lines up or down
 set nostartofline
 set backspace=indent,eol,start
 
+" figure indentation on opening
+autocmd BufReadPost * :DetectIndent
+
 " strip trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
