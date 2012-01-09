@@ -70,9 +70,6 @@ set sb   " split below
 set cmdheight=1
 set winminheight=0
 
-"set list
-set listchars=eol:¬,nbsp:⋅,tab:>-,trail:⋅,extends:>,precedes:<
-
 set shortmess=atIoOTts
 set visualbell
 set cursorline
@@ -103,6 +100,46 @@ else
 endif
 
 
+"""""""""""" Trailing whitespace """"""""""""
+
+" configure list facility
+highlight SpecialKey term=standout ctermbg=yellow guibg=yellow
+set listchars=tab:>-,trail:~
+
+" determine whether the current file has trailing whitespace
+function! SetWhitespaceMode()
+  let b:has_trailing_whitespace=!!search('\v\s+$', 'cwn')
+  if b:has_trailing_whitespace
+    " if yes, we want to enable list for this file
+    set list
+  else
+    set nolist
+  endif
+endfunction
+
+" trim trailing whitespace in the current file
+function! RTrim()
+  %s/\v\s+$//e
+  noh
+endfunction
+
+" trim trailing whitespace in the given range
+function! RTrimRange() range
+  exec a:firstline.",".a:lastline."substitute /\\v\\s+$//e"
+endfunction
+
+" after opening and saving files, check the whitespace mode
+autocmd BufReadPost  * call SetWhitespaceMode()
+autocmd BufWritePost * call SetWhitespaceMode()
+" on save, remove trailing whitespace if there was already trailing whitespace
+" in the file before
+autocmd BufWritePre  * if !b:has_trailing_whitespace | call RTrim() | endif
+
+" strip whitespace manually
+nmap <silent> <leader>W :call RTrim()<cr>
+vmap <silent> <leader>W :call RTrimRange()<cr>
+
+
 """""""""""" Basic text editing """"""""""""
 
 " wrapping
@@ -129,9 +166,6 @@ set backspace=indent,eol,start
 
 " figure indentation on opening
 autocmd BufReadPost * :silent !YAIFAMagic
-
-" strip trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
 
 
 """""""""""" Indentation """"""""""""
