@@ -346,6 +346,7 @@ nmap <leader>gq :Gremove<cr>
 nmap <leader>gl :Glog<cr>
 nmap <leader>gr :Gread<cr>
 nmap <leader>gw :Gwrite<cr>
+nmap <leader>gp :Git push<cr>
 
 vmap <leader>gg :Git<space>
 vmap <leader>gs :Gstatus<cr>
@@ -359,6 +360,7 @@ vmap <leader>gq :Gremove<cr>
 vmap <leader>gl :Glog<cr>
 vmap <leader>gr :Gread<cr>
 vmap <leader>gw :Gwrite<cr>
+vmap <leader>gp :Git push<cr>
 
 " move around splits easily
 "nnoremap <c-h> <c-w>h
