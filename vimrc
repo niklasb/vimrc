@@ -342,9 +342,10 @@ nmap <leader>gc :Gcommit<cr>
 nmap <leader>gb :Gbrowse<cr>
 nmap <leader>gbl :Gblame<cr>
 nmap <leader>gm :Gmove<cr>
-nmap <leader>grm :Gremove<cr>
+nmap <leader>gq :Gremove<cr>
 nmap <leader>gl :Glog<cr>
 nmap <leader>gr :Gread<cr>
+nmap <leader>gw :Gwrite<cr>
 
 vmap <leader>gg :Git<space>
 vmap <leader>gs :Gstatus<cr>
@@ -354,9 +355,10 @@ vmap <leader>gc :Gcommit<cr>
 vmap <leader>gb :Gbrowse<cr>
 vmap <leader>gbl :Gblame<cr>
 vmap <leader>gm :Gmove<cr>
-vmap <leader>grm :Gremove<cr>
+vmap <leader>gq :Gremove<cr>
 vmap <leader>gl :Glog<cr>
 vmap <leader>gr :Gread<cr>
+vmap <leader>gw :Gwrite<cr>
 
 " move around splits easily
 "nnoremap <c-h> <c-w>h
