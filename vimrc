@@ -86,7 +86,7 @@ set clipboard+=+
 " command-line editing
 set wildmenu
 set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv
-set wildignore+=*.ogg,*.mp3,*.mov,*.class,*/.hg/*,*/.svn/*,*/_*/*
+set wildignore+=*.ogg,*.mp4,*.mov,*.class,*/.hg/*,*/.svn/*
 set wildmode=list:longest
 
 " we can't add this to wildignore, seems like fugitive has problems
