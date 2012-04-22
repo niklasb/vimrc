@@ -111,7 +111,7 @@ highlight SpecialKey term=standout ctermbg=yellow guibg=yellow
 set listchars=tab:>-,trail:~
 
 " determine whether the current file has trailing whitespace
-function! InitWhitespaceMode()
+function! SetWhitespaceMode()
   let b:has_trailing_whitespace=!!search('\v\s+$', 'cwn')
   if b:has_trailing_whitespace
     " if yes, we want to enable list for this file
