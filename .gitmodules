@@ -88,3 +88,6 @@
 [submodule "vim/bundle/flake8"]
 	path = vim/bundle/flake8
 	url = https://github.com/nvie/vim-flake8.git
+[submodule "vim/bundle/bufkill"]
+	path = vim/bundle/bufkill
+	url = https://github.com/vim-scripts/bufkill.vim.git
