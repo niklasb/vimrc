@@ -4,9 +4,6 @@
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "vim/bundle/pep8"]
-	path = vim/bundle/pep8
-	url = https://github.com/nvie/vim-pep8.git
 [submodule "vim/bundle/yankring"]
 	path = vim/bundle/yankring
 	url = https://github.com/chrismetcalf/vim-yankring.git
@@ -16,12 +13,6 @@
 [submodule "vim/bundle/l9"]
 	path = vim/bundle/l9
 	url = https://github.com/vim-scripts/L9.git
-[submodule "vim/bundle/fuzzy"]
-	path = vim/bundle/fuzzy
-	url = https://github.com/vim-scripts/FuzzyFinder.git
-[submodule "vim/bundle/pyflakes"]
-	path = vim/bundle/pyflakes
-	url = https://github.com/nvie/vim-pyflakes.git
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive
@@ -31,15 +22,9 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/snipmate_for_django"]
-	path = vim/bundle/snipmate_for_django
-	url = https://github.com/robhudson/snipmate_for_django.git
 [submodule "vim/autoload/pathogen"]
 	path = vim/autoload/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim/bundle/addon-mw-utils"]
-	path = vim/bundle/addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "vim/bundle/tlib"]
 	path = vim/bundle/tlib
 	url = https://github.com/tomtom/tlib_vim.git
@@ -52,9 +37,6 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "vim/bundle/detectindent"]
-	path = vim/bundle/detectindent
-	url = https://github.com/ciaranm/detectindent.git
 [submodule "vim/bundle/scratch"]
 	path = vim/bundle/scratch
 	url = https://github.com/duff/vim-scratch.git
@@ -67,9 +49,6 @@
 [submodule "vim/bundle/rails"]
 	path = vim/bundle/rails
 	url = https://github.com/tpope/vim-rails.git
-[submodule "vim/bundle/c"]
-	path = vim/bundle/c
-	url = https://github.com/vim-scripts/c.vim.git
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = https://github.com/tpope/vim-repeat.git
