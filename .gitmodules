@@ -94,3 +94,6 @@
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = https://github.com/tsaleh/vim-matchit
+[submodule "vim/bundle/addon-mw-utils"]
+	path = vim/bundle/addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils
