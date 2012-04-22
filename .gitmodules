@@ -91,3 +91,6 @@
 [submodule "vim/bundle/bufkill"]
 	path = vim/bundle/bufkill
 	url = https://github.com/vim-scripts/bufkill.vim.git
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
+	url = https://github.com/tsaleh/vim-matchit
