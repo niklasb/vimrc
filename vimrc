@@ -111,13 +111,22 @@ highlight SpecialKey term=standout ctermbg=yellow guibg=yellow
 set listchars=tab:>-,trail:~
 
 " determine whether the current file has trailing whitespace
-function! SetWhitespaceMode()
+function! InitWhitespaceMode()
   let b:has_trailing_whitespace=!!search('\v\s+$', 'cwn')
   if b:has_trailing_whitespace
     " if yes, we want to enable list for this file
     set list
   else
     set nolist
+  endif
+endfunction
+
+function! WhitespaceSaveHook()
+  if !exists("b:has_trailing_whitespace")
+    let b:has_trailing_whitespace=0
+  endif
+  if !b:has_trailing_whitespace
+    call RTrim()
   endif
 endfunction
 
@@ -137,7 +146,7 @@ autocmd BufReadPost  * call SetWhitespaceMode()
 autocmd BufWritePost * call SetWhitespaceMode()
 " on save, remove trailing whitespace if there was already trailing whitespace
 " in the file before
-autocmd BufWritePre  * if !b:has_trailing_whitespace | call RTrim() | endif
+autocmd BufWritePre  * call WhitespaceSaveHook()
 
 " strip whitespace manually
 nmap <silent> <leader>W :call RTrim()<cr>
