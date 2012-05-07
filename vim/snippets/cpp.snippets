@@ -1,0 +1,46 @@
+snippet contest
+	#include <iostream>
+	#include <sstream>
+	#include <string>
+	#include <vector>
+	#include <set>
+	#include <stack>
+	#include <queue>
+	#include <deque>
+	#include <map>
+	#include <algorithm>
+	#include <cstdio>
+	#include <cstdlib>
+	#include <cstring>
+	#include <cmath>
+	#include <climits>
+
+	using namespace std;
+
+	typedef long long llong;
+	typedef pair<int, int> int2;
+	typedef pair<llong, llong> llong2;
+	#define foreach(v,c) for (typeof((c).begin()) v = (c).begin(); v != (c).end(); ++v)
+
+	int main() {
+		${1}
+		return 0;
+	}
+snippet read
+	cin >> ${1:a};
+snippet read2
+	cin >> ${1:a} >> ${2:a};
+snippet read3
+	cin >> ${1:a} >> ${2:a} >> ${3:a};
+snippet read4
+	cin >> ${1:a} >> ${2:a} >> ${3:a} >> ${4:a};
+snippet debug
+	cout << "${1:a} = " << $1 << endl;
+snippet debug2
+	cout << "${1:a} ${2:a} = " << $1 << " " << $2 << endl;
+snippet debug3
+	cout << "${1:a} ${2:a} ${3:a} = " << $1 << " " << $2 << " " << $3 << endl;
+snippet debug4
+	cout << "${1:a} ${2:a} ${3:a} ${4:a} = " << $1 << " " << $2 << " " << $3 << " " << $4 << endl;
+snippet debug5
+	cout << "${1:a} ${2:a} ${3:a} ${4:a} ${5:a} = " << $1 << " " << $2 << " " << $3 << " " << $4 << " " << $5 << endl;
