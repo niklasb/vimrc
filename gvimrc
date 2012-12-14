@@ -1,4 +1,5 @@
 set visualbell t_vb=
+set nomousehide
 
 set guifont=DejaVu\ Sans\ Mono\ 9
 
