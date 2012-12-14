@@ -18,7 +18,8 @@ set lazyredraw
 
 "set autoread
 
-set relativenumber
+" disabled for performance reasons
+"set relativenumber
 
 set switchbuf=useopen,usetab
 
@@ -53,6 +54,7 @@ set winaltkeys=no
 set mouse=a
 
 set scrolloff=3
+set scrolljump=5
 set sidescrolloff=5
 set sidescroll=1
 
@@ -63,6 +65,8 @@ set showmode
 set showcmd
 
 syntax on
+set synmaxcol=120
+syntax sync minlines=200
 
 set spr  " split right
 set sb   " split below
@@ -72,7 +76,8 @@ set winminheight=0
 
 set shortmess=atIoOTts
 set visualbell
-set cursorline
+" disabled for performance reasons
+set nocursorline
 set ruler
 
 set statusline= "clear it first
@@ -89,8 +94,7 @@ set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,moc_*
 set wildignore+=*.o,*.ogg,*.mp4,*.mov,*.class,*/.hg/*,*/.svn/*,*/docs/_*/*
 set wildmode=list:longest
 
-" we can't add this to wildignore, seems like fugitive has problems
-" with it.
+" we can't add this to wildignore, seems like fugitive has problems with it.
 let g:ctrlp_custom_ignore = '\.git$'
 
 ";;;;; color scheme ;;;;;"
@@ -221,6 +225,12 @@ nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
 nmap <leader>M :NERDTreeClose<CR>:NERDTreeFind<CR>
 nmap <leader>N :NERDTreeClose<CR>
 
+"""""""""""" CtrlP """""""""""""""
+
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_max_files = 0
+let g:ctrlp_max_files = 0
+let g:ctrlp_mruf_max = 250
 
 """""""""""" Mappings """"""""""""
 
@@ -337,7 +347,7 @@ vnoremap <leader>y "+y
 nnoremap <leader>v V`]
 
 " exit insert / visual mode
-inoremap jk <esc>
+inoremap kj <esc>
 vnoremap v <esc>
 
 " vertical split
@@ -372,10 +382,10 @@ vmap <leader>gw :Gwrite<cr>
 vmap <leader>gp :Git push<cr>
 
 " move around splits easily
-"nnoremap <c-h> <c-w>h
-"nnoremap <c-j> <c-w>j
-"nnoremap <c-k> <c-w>k
-"nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 " easy switching between windows
 nnoremap <leader>t <c-w><c-w>
@@ -387,7 +397,6 @@ nnoremap <leader>s :w<cr>
 nnoremap <leader>f :CtrlP<cr>
 nnoremap <leader>m :CtrlPMRU<cr>
 nnoremap <leader>b :CtrlPBuffer<cr>
-nnoremap <leader>qf :FufFile<cr>
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
