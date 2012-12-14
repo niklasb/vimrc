@@ -1,12 +1,49 @@
-
-"""""""""""" General """"""""""
-
 set nocompatible
 
+"""""""""""" Vundle """""""""""
+
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
 filetype plugin indent on
+
+Bundle "mileszs/ack.vim"
+Bundle "sjl/gundo.vim"
+Bundle "chrismetcalf/vim-yankring"
+Bundle "kien/ctrlp.vim"
+Bundle "vim-scripts/L9"
+Bundle "tpope/vim-fugitive"
+Bundle "scrooloose/nerdcommenter"
+Bundle "scrooloose/nerdtree"
+Bundle "tpope/vim-pathogen"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/snipmate-snippets"
+Bundle "ervandew/supertab"
+Bundle "duff/vim-scratch"
+Bundle "Raimondi/YAIFA"
+Bundle "vim-scripts/taglist.vim"
+Bundle "tpope/vim-rails"
+Bundle "tpope/vim-repeat"
+Bundle "tpope/vim-surround"
+Bundle "semmons99/vim-ruby-matchit"
+Bundle "fs111/pydoc.vim"
+Bundle "tpope/vim-pastie"
+Bundle "tpope/vim-unimpaired"
+Bundle "tpope/vim-markdown"
+Bundle "tpope/vim-endwise"
+Bundle "tpope/vim-git"
+Bundle "tpope/vim-rake"
+Bundle "tpope/vim-bundler"
+Bundle "tpope/vim-haml"
+Bundle "nvie/vim-flake8"
+Bundle "niklasb/bufkill.vim"
+Bundle "tsaleh/vim-matchit"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "vim-scripts/ZoomWin"
+
+"""""""""""" General """"""""""
 
 set nomodeline
 
@@ -27,7 +64,6 @@ let mapleader=","
 
 " change to file directory when switching to a file buffer
 autocmd BufEnter * silent! lcd %:p:h
-
 
 """""""""""" Persistency """"""""""""
 
