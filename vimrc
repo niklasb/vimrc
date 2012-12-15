@@ -42,6 +42,10 @@ Bundle "niklasb/bufkill.vim"
 Bundle "tsaleh/vim-matchit"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "vim-scripts/ZoomWin"
+Bundle "vim-scripts/indenthaskell.vim"
+Bundle "niklasb/vim-hdevtools"
+Bundle "scrooloose/syntastic"
+Bundle "embear/vim-localvimrc"
 
 """""""""""" General """"""""""
 
@@ -126,8 +130,6 @@ set clipboard+=+
 
 " command-line editing
 set wildmenu
-set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,moc_*
-set wildignore+=*.o,*.f_*,*~,*.ogg,*.mp4,*.mov,*.class,*/.hg/*,*/.svn/*,*/docs/_*/*
 set wildmode=list:longest
 
 " we can't add this to wildignore, seems like fugitive has problems with it.
@@ -142,6 +144,13 @@ if has("gui_running")
 else
   colorscheme slate
 endif
+
+
+"""""""""""" Project editing """"""""""""""""
+
+set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,moc_*
+set wildignore+=*.o,*.f_*,*~,*.ogg,*.mp4,*.mov,*.class,*/.hg/*,*/.svn/*,*/docs/_*/*
+set tags+=tags;
 
 
 """""""""""" Trailing whitespace """"""""""""
@@ -267,6 +276,14 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_files = 0
 let g:ctrlp_max_files = 0
 let g:ctrlp_mruf_max = 250
+
+"""""""""""" Haskell """""""""""""
+
+augroup HSK
+  autocmd FileType haskell setlocal formatoptions+=t
+  au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+  au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+augroup END
 
 """""""""""" Mappings """"""""""""
 
@@ -416,12 +433,6 @@ vmap <leader>gl :Glog<cr>
 vmap <leader>gr :Gread<cr>
 vmap <leader>gw :Gwrite<cr>
 vmap <leader>gp :Git push<cr>
-
-" move around splits easily
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
 
 " easy switching between windows
 nnoremap <leader>t <c-w><c-w>
