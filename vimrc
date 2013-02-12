@@ -10,7 +10,6 @@ filetype plugin indent on
 
 Bundle "mileszs/ack.vim"
 Bundle "sjl/gundo.vim"
-Bundle "chrismetcalf/vim-yankring"
 Bundle "kien/ctrlp.vim"
 Bundle "vim-scripts/L9"
 Bundle "tpope/vim-fugitive"
@@ -46,6 +45,7 @@ Bundle "vim-scripts/indenthaskell.vim"
 Bundle "niklasb/vim-hdevtools"
 Bundle "scrooloose/syntastic"
 Bundle "embear/vim-localvimrc"
+Bundle "vim-scripts/YankRing.vim"
 
 """""""""""" General """"""""""
 
@@ -150,6 +150,7 @@ endif
 
 set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,moc_*
 set wildignore+=*.o,*.f_*,*~,*.ogg,*.mp4,*.mov,*.class,*/.hg/*,*/.svn/*,*/docs/_*/*
+set wildignore+=*/_darcs/*,*/.git/*,*/objs/*,*/wf/*,*.obj,*.hash,*.meta
 set tags+=tags;
 
 
@@ -280,10 +281,17 @@ let g:ctrlp_mruf_max = 250
 """""""""""" Haskell """""""""""""
 
 augroup HSK
-  autocmd FileType haskell setlocal formatoptions+=t
   au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
   au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 augroup END
+
+
+"""""""""""" Syntastic """""""""""
+
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': [] }
+
 
 """""""""""" Mappings """"""""""""
 
@@ -382,6 +390,9 @@ nmap Y y$
 
 " YankRing
 nmap <leader>r :YRShow<CR>
+
+" Syntastic
+nmap <leader>c :SyntasticCheck<cr>
 
 " Gundo
 nnoremap <f4> :GundoToggle<cr>
