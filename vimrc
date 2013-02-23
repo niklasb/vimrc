@@ -46,6 +46,7 @@ Bundle "niklasb/vim-hdevtools"
 Bundle "scrooloose/syntastic"
 Bundle "embear/vim-localvimrc"
 Bundle "vim-scripts/YankRing.vim"
+Bundle "duganchen/vim-soy"
 
 """""""""""" General """"""""""
 
