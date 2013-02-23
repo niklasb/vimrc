@@ -78,7 +78,7 @@ hi Search          guifg=#FFFFFF guibg=#455354
 " marks column
 hi SignColumn      guifg=#A6E22E guibg=#232526
 hi SpecialChar     guifg=#F92672               gui=bold
-hi SpecialComment  guifg=#465457               gui=bold
+hi SpecialComment  guifg=#6E6A59               gui=bold
 hi Special         guifg=#66D9EF guibg=bg      gui=italic
 hi SpecialKey      guifg=#888A85               gui=italic
 if has("spell")
@@ -110,7 +110,7 @@ hi WildMenu        guifg=#66D9EF guibg=#000000
 
 if s:molokai_original == 1
    hi Normal          guifg=#F8F8F2 guibg=#272822
-   hi Comment         guifg=#75715E
+   hi Comment         guifg=#6E6A59
    hi CursorLine                    guibg=#3E3D32
    hi CursorColumn                  guibg=#3E3D32
    hi ColorColumn                   guibg=#3E3D32
@@ -119,7 +119,7 @@ if s:molokai_original == 1
 else
    hi Normal          guifg=#F8F8F2 guibg=#1B1D1E
    hi Folded          guifg=#666666 guibg=#1B1D1E
-   hi Comment         guifg=#465457
+   hi Comment         guifg=#6E6A59
    hi CursorLine                    guibg=#232728
    hi CursorColumn                  guibg=#232728
    hi ColorColumn                   guibg=#232728
