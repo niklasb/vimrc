@@ -6,8 +6,8 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-filetype plugin indent on
-
+Bundle "vim-scripts/moria"
+Bundle "Lokaltog/vim-easymotion"
 Bundle "mileszs/ack.vim"
 Bundle "sjl/gundo.vim"
 Bundle "kien/ctrlp.vim"
@@ -15,7 +15,6 @@ Bundle "vim-scripts/L9"
 Bundle "tpope/vim-fugitive"
 Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/nerdtree"
-Bundle "tpope/vim-pathogen"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/snipmate-snippets"
@@ -42,11 +41,16 @@ Bundle "tsaleh/vim-matchit"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "vim-scripts/ZoomWin"
 Bundle "vim-scripts/indenthaskell.vim"
-Bundle "niklasb/vim-hdevtools"
+"Bundle "lukerandall/haskellmode-vim"
+Bundle "bitc/vim-hdevtools"
 Bundle "scrooloose/syntastic"
 Bundle "embear/vim-localvimrc"
 Bundle "vim-scripts/YankRing.vim"
 Bundle "duganchen/vim-soy"
+Bundle "https://github.com/jhenahan/idris-vim"
+Bundle 'derekwyatt/vim-scala'
+
+filetype plugin indent on
 
 """""""""""" General """"""""""
 
@@ -85,7 +89,7 @@ set noswapfile
 "  :100  :  up to 100 lines of command-line history will be remembered
 "  %     :  saves and restores the buffer list
 "  n...  :  where to save the viminfo files
-set viminfo='50,\"100,:100,n~/.viminfo
+set viminfo='50,\"100,:100,n~/.viminfo,!
 set history=1000
 
 
@@ -104,6 +108,7 @@ set confirm
 
 set showmode
 set showcmd
+set number
 
 syntax on
 set synmaxcol=120
@@ -213,6 +218,7 @@ set lbr " don't split words
 set formatoptions=qrn1
 set colorcolumn=85
 set showbreak=…
+set virtualedit=all
 
 " completion
 set complete=.,w,b,t,i
@@ -266,10 +272,13 @@ vnoremap / /\v
 nnoremap <leader><space> :noh<cr>
 
 
+"""""""""""" Color schemes """"""""""""
+
+let moria_fontface = 'mixed'
+
 """""""""""" NERDTree """"""""""""
 
-nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
-nmap <leader>M :NERDTreeClose<CR>:NERDTreeFind<CR>
+nmap <leader>n :NERDTreeFind<CR>:NERDTreeFind<CR>
 nmap <leader>N :NERDTreeClose<CR>
 
 """""""""""" CtrlP """""""""""""""
@@ -279,9 +288,21 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_max_files = 0
 let g:ctrlp_mruf_max = 250
 
+
+"""""""""""" localvimrc """"""""""
+
+let g:localvimrc_persistent = 1
+
+"""""""""""" EasyMotion """"""""""
+
+let g:EasyMotion_leader_key = '\'
+
 """""""""""" Haskell """""""""""""
 
+let g:haddock_browser = 'chromium'
+
 augroup HSK
+  "au BufEnter *.hs compiler ghc
   au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
   au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 augroup END
@@ -300,6 +321,10 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 nmap <silent> <leader>qe :e $MYVIMRC<CR>
 nmap <silent> <leader>qs :so $MYVIMRC<CR>
 
+" Remap j and k to act as expected when used on long, wrapped, lines
+nnoremap j gj
+nnoremap k gk
+
 " want to learn hjkl
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -313,10 +338,6 @@ vnoremap <up> <nop>
 vnoremap <down> <nop>
 vnoremap <left> <nop>
 vnoremap <right> <nop>
-
-" Remap j and k to act as expected when used on long, wrapped, lines
-nnoremap j gj
-nnoremap k gk
 
 " faster movement
 nmap <silent> <c-j> 4j
@@ -371,10 +392,7 @@ nmap <silent> <leader>d "_d
 vmap <silent> <leader>d "_d
 
 " search / replace shortcut
-nnoremap <leader>e :s//<left>
-
-" jump to matching pairs easily, with Tab
-omap <Tab> %
+nnoremap <leader>e :%s//<left>
 
 " folding
 nnoremap <Space> za
@@ -459,3 +477,6 @@ nnoremap <leader>b :CtrlPBuffer<cr>
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
+
+" prepare a TopCoder file
+nnoremap <leader>o :set expandtab shiftwidth=2 sts=2<cr>:%s/\t/  /<cr>:call RTrim()<cr>
