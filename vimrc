@@ -218,7 +218,7 @@ set lbr " don't split words
 set formatoptions=qrn1
 set colorcolumn=85
 set showbreak=…
-set virtualedit=all
+"set virtualedit=all
 
 " completion
 set complete=.,w,b,t,i
@@ -307,6 +307,10 @@ augroup HSK
   au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 augroup END
 
+
+"""""""""""" LaTeX """""""""""""""
+
+au FileType tex set indentexpr=
 
 """""""""""" Syntastic """""""""""
 

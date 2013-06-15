@@ -20,11 +20,20 @@ snippet contest
 	using namespace std;
 	using namespace std::tr1;
 
-	typedef long long llong;
-	typedef pair<int, int> int2;
-	typedef pair<llong, llong> llong2;
-	#define foreach(v,c) for (typeof((c).begin()) v = (c).begin(); v != (c).end(); ++v)
-	#define rep(i,n) for (int i = 0; i < (n); ++i)
+	typedef long long ll;
+	typedef pair<int, int> pii;
+	#define foreach(v,c) for(typeof((c).begin()) v=(c).begin(); v!=(c).end();++v)
+	#define rep(i,s,e) for (typeof(s) i=(s);i<(e);++i)
+	#define pb push_back
+	#define mk make_pair
+	#define X first
+	#define Y second
+	#define all(x) (x).begin(),(x).end()
+	#define clr(x,y) memset(x,y,sizeof x)
+	template<typename T>void readn(int n,T i) {rep(j,0,n)cin>>*(i++);}
+
+	int dx[]={0,0,1,-1,1,-1,1,-1}, dy[]={-1,1,0,0,1,-1,-1,1};
+	const int mod = 1e9+7;
 
 	int main() {
 		ios_base::sync_with_stdio(false);
