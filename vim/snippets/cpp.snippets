@@ -8,9 +8,13 @@ snippet contest
 	#include <queue>
 	#include <deque>
 	#include <map>
+	#include <algorithm>
+	#include <iomanip>
+	#include <complex>
+	#include <valarray>
 	#include <tr1/unordered_map>
 	#include <tr1/unordered_set>
-	#include <algorithm>
+	#include <cassert>
 	#include <cstdio>
 	#include <cstdlib>
 	#include <cstring>
@@ -22,21 +26,28 @@ snippet contest
 
 	typedef long long ll;
 	typedef pair<int, int> pii;
+	typedef vector<int> vi;
 	#define foreach(v,c) for(typeof((c).begin()) v=(c).begin(); v!=(c).end();++v)
-	#define rep(i,s,e) for (typeof(s) i=(s);i<(e);++i)
+	#define rep(i,s,e) for (int i=(s);i<(e);++i)
 	#define pb push_back
 	#define mk make_pair
 	#define X first
 	#define Y second
 	#define all(x) (x).begin(),(x).end()
 	#define clr(x,y) memset(x,y,sizeof x)
-	template<typename T>void readn(int n,T i) {rep(j,0,n)cin>>*(i++);}
+	#define contains(x,y) (x).find(y)!=(x).end()
+	#define endl "\n"
 
 	int dx[]={0,0,1,-1,1,-1,1,-1}, dy[]={-1,1,0,0,1,-1,-1,1};
-	const int mod = 1e9+7;
+	const int mod = 1e9+7,maxn=100100;
 
 	int main() {
-		ios_base::sync_with_stdio(false);
+	#ifndef LOCAL
+		//freopen("x.in", "r", stdin);
+		//freopen("x.out", "w", stdout);
+	#endif
+		ios::sync_with_stdio(0);
+		cout << fixed << setprecision(16);
 		${1}
 	}
 snippet read
