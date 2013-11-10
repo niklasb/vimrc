@@ -407,6 +407,7 @@ nnoremap < <<
 nnoremap > >>
 vnoremap < <gv
 vnoremap > >gv
+"vnoremap y ygv
 
 " quick yanking to the end of the line
 nmap Y y$
