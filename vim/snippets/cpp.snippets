@@ -1,55 +1,106 @@
 snippet contest
-	#include <iostream>
-	#include <sstream>
-	#include <string>
-	#include <vector>
-	#include <set>
-	#include <stack>
-	#include <queue>
-	#include <deque>
-	#include <map>
-	#include <algorithm>
-	#include <iomanip>
-	#include <complex>
-	#include <valarray>
+	#include <bits/stdc++.h>
+	#include <cassert>
 	#include <tr1/unordered_map>
 	#include <tr1/unordered_set>
-	#include <cassert>
-	#include <cstdio>
-	#include <cstdlib>
-	#include <cstring>
-	#include <cmath>
-	#include <climits>
-
-	using namespace std;
-	using namespace std::tr1;
-
-	typedef long long ll;
-	typedef pair<int, int> pii;
-	typedef vector<int> vi;
+	using namespace std; using namespace std::tr1;
+	typedef long long ll; typedef long double ld;
 	#define foreach(v,c) for(typeof((c).begin()) v=(c).begin(); v!=(c).end();++v)
-	#define rep(i,s,e) for (int i=(s);i<(e);++i)
+	#define rep(i,s,e) for (int i=(s),__ee##__LINE__=(e);i<__ee##__LINE__;++i)
+	#define all(x) (x).begin(),(x).end()
+	#define clr(x,y) memset(x,y,sizeof x)
+	#define contains(x,y) ((x).find(y)!=(x).end())
 	#define pb push_back
 	#define mk make_pair
 	#define fst first
 	#define snd second
-	#define all(x) (x).begin(),(x).end()
-	#define clr(x,y) memset(x,y,sizeof x)
-	#define contains(x,y) (x).find(y)!=(x).end()
-	#define endl "\n"
-
+	#define sz(x) ((int)(x).size())
+	#define tn typename
+	template <tn T> T read() { T x; cin >> x; return x; }
 	int dx[]={0,0,1,-1,1,-1,1,-1}, dy[]={-1,1,0,0,1,-1,-1,1};
-	const int mod = 1e9+7;
-
+	void run();
 	int main() {
-	#ifndef LOCAL
-		//freopen("x.in", "r", stdin);
-		//freopen("x.out", "w", stdout);
-	#endif
+	#ifdef LOCAL
+	#  define dbg(s, ...) printf(s "\n", __VA_ARGS__)
+	#else
+	#  define endl "\n"
+	#  define dbg(s,...)
+	#  define FILE "x"
+		//freopen(FILE ".in", "r", stdin), freopen(FILE ".out", "w", stdout);
 		ios::sync_with_stdio(0);
+	#endif
 		cout << fixed << setprecision(16);
+		run();
+	}
+
+	void run() {
 		${1}
 	}
+snippet contest11
+	#include <bits/stdc++.h>
+	#include <cassert>
+	using namespace std;
+	typedef long long ll; typedef long double ld;
+	#define rep(i,s,e) for (int i=(s),__ee=(e);i<__ee;++i)
+	#define all(x) begin(x),end(x)
+	#define clr(x,y) memset(x,y,sizeof x)
+	#define contains(x,y) ((x).find(y)!=end(x))
+	#define pb push_back
+	#define Tu tuple
+	#define mk make_pair
+	#define mkt make_tuple
+	#define fst first
+	#define snd second
+	#define _1 get<0>
+	#define _2 get<1>
+	#define _3 get<2>
+	#define _4 get<3>
+	#define sz(x) ((int)(x).size())
+	#define tn typename
+	template <tn T> T read() { T x; cin >> x; return x; }
+	int dx[]={0,0,1,-1,1,-1,1,-1}, dy[]={-1,1,0,0,1,-1,-1,1};
+	void run();
+	int main() {
+	#ifdef LOCAL
+	#  define dbg(s, ...) printf(s "\n", __VA_ARGS__)
+	#else
+	#  define endl "\n"
+	#  define dbg(s,...)
+	#  define FILE "x"
+		//freopen(FILE ".in", "r", stdin), freopen(FILE ".out", "w", stdout);
+		ios::sync_with_stdio(0);
+	#endif
+		cout << fixed << setprecision(16);
+		run();
+	}
+
+	void run() {
+		${1}
+	}
+snippet topcoder
+	#include <bits/stdc++.h>
+	#include <cassert>
+	using namespace std;
+	typedef long long ll; typedef long double ld;
+	#define rep(i,s,e) for (int i=(s),__ee=(e);i<__ee;++i)
+	#define all(x) begin(x),end(x)
+	#define clr(x,y) memset(x,y,sizeof x)
+	#define contains(x,y) ((x).find(y)!=end(x))
+	#define pb push_back
+	#define Tu tuple
+	#define mk make_pair
+	#define mkt make_tuple
+	#define fst first
+	#define snd second
+	#define _1 get<0>
+	#define _2 get<1>
+	#define _3 get<2>
+	#define _4 get<3>
+	#define sz(x) ((int)(x).size())
+	#define tn typename
+	#define isinf std::isinf
+	#define isnan std::isnan
+	int dx[]={0,0,1,-1,1,-1,1,-1}, dy[]={-1,1,0,0,1,-1,-1,1};
 snippet read
 	cin >> ${1:a};
 snippet read2
