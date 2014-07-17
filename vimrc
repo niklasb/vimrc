@@ -265,8 +265,8 @@ set showmatch
 set hlsearch
 
 " don't use special regex syntax
-nnoremap / /\v
-vnoremap / /\v
+nnoremap / /\V
+vnoremap / /\V
 
 " break out of a search
 nnoremap <leader><space> :noh<cr>
@@ -317,7 +317,8 @@ au FileType tex set indentexpr=
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
-
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 """""""""""" Mappings """"""""""""
 
@@ -396,7 +397,7 @@ nmap <silent> <leader>d "_d
 vmap <silent> <leader>d "_d
 
 " search / replace shortcut
-nnoremap <leader>e :%s//<left>
+nnoremap <leader>e :%s/
 
 " folding
 nnoremap <Space> za
@@ -411,6 +412,12 @@ vnoremap > >gv
 
 " quick yanking to the end of the line
 nmap Y y$
+
+nnoremap <leader>f :execute 'Unite' '-start-insert file_rec/async:'.unite#util#path2project_directory(getcwd())<cr>
+nnoremap <leader>m :Unite -start-insert file_mru<cr>
+nnoremap <leader>b :Unite -quick-match buffer<cr>
+nnoremap <leader>O :Unite -start-insert outline<cr>
+nnoremap <leader>g :Unite grep<cr>
 
 " YankRing
 nmap <leader>r :YRShow<CR>
@@ -474,11 +481,6 @@ nnoremap <leader>t <c-w><c-w>
 
 " save shortcut
 nnoremap <leader>s :w<cr>
-
-" fuzzy finding
-nnoremap <leader>f :CtrlP<cr>
-nnoremap <leader>m :CtrlPMRU<cr>
-nnoremap <leader>b :CtrlPBuffer<cr>
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
