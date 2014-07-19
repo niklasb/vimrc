@@ -6,6 +6,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/moria'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mileszs/ack.vim'
@@ -49,7 +50,10 @@ Plugin 'vim-scripts/YankRing.vim'
 Plugin 'duganchen/vim-soy'
 Plugin 'idris-hackers/idris-vim'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc.vim'
 
+call vundle#end()
 filetype plugin indent on
 
 """""""""""" General """"""""""
