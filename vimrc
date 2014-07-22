@@ -6,6 +6,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/moria'
 Plugin 'Lokaltog/vim-easymotion'
@@ -39,7 +40,6 @@ Plugin 'tpope/vim-haml'
 Plugin 'nvie/vim-flake8'
 Plugin 'niklasb/bufkill.vim'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'vim-scripts/indenthaskell.vim'
 "Plugin 'lukerandall/haskellmode-vim'
@@ -50,8 +50,8 @@ Plugin 'vim-scripts/YankRing.vim'
 Plugin 'duganchen/vim-soy'
 Plugin 'idris-hackers/idris-vim'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
 
 call vundle#end()
 filetype plugin indent on
