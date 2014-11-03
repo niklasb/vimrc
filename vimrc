@@ -52,6 +52,8 @@ Plugin 'idris-hackers/idris-vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'godlygeek/tabular'
 
 call vundle#end()
 filetype plugin indent on
@@ -167,7 +169,7 @@ set tags+=tags;
 """""""""""" Trailing whitespace """"""""""""
 
 " configure list facility
-highlight SpecialKey term=standout ctermbg=yellow guibg=yellow
+"highlight SpecialKey term=standout ctermbg=yellow guibg=yellow
 set listchars=tab:>-,trail:~
 
 " determine whether the current file has trailing whitespace
@@ -417,11 +419,16 @@ vnoremap > >gv
 " quick yanking to the end of the line
 nmap Y y$
 
-nnoremap <leader>f :execute 'Unite' '-start-insert file_rec/async:'.unite#util#path2project_directory(getcwd())<cr>
-nnoremap <leader>m :Unite -start-insert file_mru<cr>
-nnoremap <leader>b :Unite -quick-match buffer<cr>
-nnoremap <leader>O :Unite -start-insert outline<cr>
-nnoremap <leader>g :Unite grep<cr>
+" fuzzy finding
+nnoremap <leader>f :CtrlP<cr>
+nnoremap <leader>m :CtrlPMRU<cr>
+nnoremap <leader>b :CtrlPBuffer<cr>
+
+"nnoremap <leader>f :execute 'Unite' '-start-insert file_rec/async:'.unite#util#path2project_directory(getcwd())<cr>
+"nnoremap <leader>m :Unite -start-insert file_mru<cr>
+"nnoremap <leader>b :Unite -quick-match buffer<cr>
+"nnoremap <leader>O :Unite -start-insert outline<cr>
+"nnoremap <leader>g :Unite grep<cr>
 
 " YankRing
 nmap <leader>r :YRShow<CR>
