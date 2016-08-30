@@ -1,7 +1,7 @@
 set visualbell t_vb=
 set nomousehide
 
-set guifont=DejaVu\ Sans\ Mono\ 9
+set guifont=Consolas\ 13
 
 set guioptions-=l " no left scrollbar
 set guioptions-=L " no left scrollbar

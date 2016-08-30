@@ -54,6 +54,8 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'godlygeek/tabular'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'vim-multiple-cursors'
 
 call vundle#end()
 filetype plugin indent on
@@ -117,7 +119,7 @@ set showcmd
 set number
 
 syntax on
-set synmaxcol=120
+set synmaxcol=1000
 syntax sync minlines=200
 
 set spr  " split right
@@ -379,11 +381,6 @@ inoremap <c-o>      <esc>o
 inoremap <c-cr>     <esc>O
 inoremap <s-cr>     <esc>:call append(line('.')-1, '')<cr>i
 
-" Enter to add empty lines
-nmap <cr> o<esc>^c$<esc>
-nmap <s-cr> :call append(line('.')-1, '')<cr>
-nmap <c-cr> O<esc>^c$<esc>
-
 " make a new section
 nnoremap <leader>u o<esc>^c$<esc>O
 
@@ -498,3 +495,10 @@ cmap w!! w !sudo tee % >/dev/null
 
 " prepare a TopCoder file
 nnoremap <leader>o :set expandtab shiftwidth=2 sts=2<cr>:%s/\t/  /<cr>:call RTrim()<cr>
+
+compiler gcc
+set errorformat^=%-G%f:%l:\ required\ from%m
+
+" font shortcuts
+command! Bigfont set guifont=Consolas\ 13
+command! Smallfont set guifont=Monospace\ 9
