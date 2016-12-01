@@ -14,7 +14,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/L9'
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tlib_vim'
@@ -43,7 +43,6 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'vim-scripts/indenthaskell.vim'
 "Plugin 'lukerandall/haskellmode-vim'
-Plugin 'bitc/vim-hdevtools'
 Plugin 'scrooloose/syntastic'
 Plugin 'embear/vim-localvimrc'
 Plugin 'vim-scripts/YankRing.vim'
@@ -502,3 +501,4 @@ set errorformat^=%-G%f:%l:\ required\ from%m
 " font shortcuts
 command! Bigfont set guifont=Consolas\ 13
 command! Smallfont set guifont=Monospace\ 9
+command! Tinyfont set guifont=Terminus\ 8

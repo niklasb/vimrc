@@ -5,6 +5,9 @@ snippet contest
 	#define rep(i,s,e) for (int i=(s),__ee=(e);i<__ee;++i)
 	#define all(x) begin(x),end(x)
 	#define clr(x,y) memset(x,y,sizeof x)
+	#ifndef LOCAL
+	#  define endl "\n"
+	#endif
 	int dx[]={0,0,1,-1,1,-1,1,-1}, dy[]={-1,1,0,0,1,-1,-1,1};
 	int main() {
 		ios::sync_with_stdio(0);
