@@ -54,7 +54,12 @@ Plugin 'Shougo/unite.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'godlygeek/tabular'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'powerline/powerline'
+Plugin 'chriskempson/base16-vim'
+Plugin 'keith/swift.vim'
+Plugin 'lyuts/vim-rtags'
+Plugin 'saelo/smarttrim.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -152,10 +157,14 @@ let g:ctrlp_custom_ignore = '\.git$'
 
 if has("gui_running")
   colorscheme molokai
+  "colorscheme base16-tomorrow-night
+  "colorscheme base16-monokai
   set guicursor=a:block-Cursor
   set guicursor+=n-v:blinkon0  " cursors shouldn't blink.
 else
-  colorscheme slate
+  colorscheme molokai
+  "colorscheme slate   " for < 256 colors
+  set t_Co=256
 endif
 
 
@@ -164,6 +173,7 @@ endif
 set wildignore+=*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,moc_*
 set wildignore+=*.o,*.f_*,*~,*.ogg,*.mp4,*.mov,*.class,*/.hg/*,*/.svn/*,*/docs/_*/*
 set wildignore+=*/_darcs/*,*/.git/*,*/objs/*,*/wf/*,*.obj,*.hash,*.meta
+set wildignore+=*/node_modules/*,*.pdf,*/vendor/*,*.out
 set tags+=tags;
 
 
@@ -172,26 +182,6 @@ set tags+=tags;
 " configure list facility
 "highlight SpecialKey term=standout ctermbg=yellow guibg=yellow
 set listchars=tab:>-,trail:~
-
-" determine whether the current file has trailing whitespace
-function! SetWhitespaceMode()
-  let b:has_trailing_whitespace=!!search('\v\s+$', 'cwn')
-  if b:has_trailing_whitespace
-    " if yes, we want to enable list for this file
-    set list
-  else
-    set nolist
-  endif
-endfunction
-
-function! WhitespaceSaveHook()
-  if !exists("b:has_trailing_whitespace")
-    let b:has_trailing_whitespace=0
-  endif
-  if !b:has_trailing_whitespace
-    call RTrim()
-  endif
-endfunction
 
 " trim trailing whitespace in the current file
 function! RTrim()
@@ -203,13 +193,6 @@ endfunction
 function! RTrimRange() range
   exec a:firstline.",".a:lastline."substitute /\\v\\s+$//e"
 endfunction
-
-" after opening and saving files, check the whitespace mode
-autocmd BufReadPost  * call SetWhitespaceMode()
-autocmd BufWritePost * call SetWhitespaceMode()
-" on save, remove trailing whitespace if there was already trailing whitespace
-" in the file before
-autocmd BufWritePre  * call WhitespaceSaveHook()
 
 " strip whitespace manually
 nmap <silent> <leader>W :call RTrim()<cr>
@@ -499,6 +482,14 @@ compiler gcc
 set errorformat^=%-G%f:%l:\ required\ from%m
 
 " font shortcuts
+command! Hifont set guifont=Consolas\ 16
 command! Bigfont set guifont=Consolas\ 13
 command! Smallfont set guifont=Monospace\ 9
 command! Tinyfont set guifont=Terminus\ 8
+
+""" powerline
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
+
+set spelllang=en_us
