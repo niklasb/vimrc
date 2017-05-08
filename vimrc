@@ -60,6 +60,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'keith/swift.vim'
 Plugin 'lyuts/vim-rtags'
 Plugin 'saelo/smarttrim.vim'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 filetype plugin indent on
@@ -493,3 +494,7 @@ command! Tinyfont set guifont=Terminus\ 8
 "python del powerline_setup
 
 set spelllang=en_us
+
+""" gitgutter
+
+set updatetime=300
