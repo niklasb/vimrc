@@ -61,6 +61,10 @@ Plugin 'keith/swift.vim'
 Plugin 'lyuts/vim-rtags'
 Plugin 'saelo/smarttrim.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'isRuslan/vim-es6'
+Plugin 'johngrib/vim-game-code-break'
+Plugin 'tomlion/vim-solidity'
+Plugin 'maksimr/vim-jsbeautify'
 
 call vundle#end()
 filetype plugin indent on
@@ -72,8 +76,8 @@ set nomodeline
 set termencoding=utf-8
 set encoding=utf-8
 
-set ttyfast
-set lazyredraw
+set term=xterm-256color
+set t_ut=
 
 "set autoread
 
@@ -311,6 +315,13 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
+""""""""""" Solidity """""""""""""
+
+augroup solidity
+  au!
+  autocmd BufNewFile,BufRead *.sol set syntax=solidity
+augroup END
+
 """""""""""" Mappings """"""""""""
 
 " Edit the vimrc file
@@ -390,8 +401,8 @@ nnoremap <Space> za
 vnoremap <Space> za
 
 " nicer indentation
-nnoremap < <<
-nnoremap > >>
+"nnoremap < <<
+"nnoremap > >>
 vnoremap < <gv
 vnoremap > >gv
 "vnoremap y ygv

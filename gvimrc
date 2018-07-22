@@ -9,3 +9,6 @@ set guioptions-=r " no right scrollbar
 set guioptions-=R " no right scrollbar
 set guioptions-=T " no toolbar
 set guioptions-=m " no menu
+
+set lazyredraw
+set ttyfast
