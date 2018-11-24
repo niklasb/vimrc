@@ -65,6 +65,8 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'johngrib/vim-game-code-break'
 Plugin 'tomlion/vim-solidity'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
 
 call vundle#end()
 filetype plugin indent on
@@ -332,20 +334,6 @@ nmap <silent> <leader>qs :so $MYVIMRC<CR>
 nnoremap j gj
 nnoremap k gk
 
-" want to learn hjkl
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-vnoremap <up> <nop>
-vnoremap <down> <nop>
-vnoremap <left> <nop>
-vnoremap <right> <nop>
-
 " faster movement
 nmap <silent> <c-j> 4j
 nmap <silent> <c-k> 4k
@@ -509,3 +497,13 @@ set spelllang=en_us
 """ gitgutter
 
 set updatetime=300
+
+"if executable('ccls')
+   "au User lsp_setup call lsp#register_server({
+      "\ 'name': 'ccls',
+      "\ 'cmd': {server_info->[&shell, &shellcmdflag, 'ccls -v=10 -log-file-append=/tmp/ccls.log']},
+      "\ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+      "\ 'initialization_options': { 'cacheDirectory': '/home/niklas/ccls-cache' },
+      "\ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+      "\ })
+"endif
