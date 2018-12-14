@@ -327,8 +327,8 @@ augroup END
 """""""""""" Mappings """"""""""""
 
 " Edit the vimrc file
-nmap <silent> <leader>qe :e $MYVIMRC<CR>
-nmap <silent> <leader>qs :so $MYVIMRC<CR>
+nmap <silent> <leader>Qe :e $MYVIMRC<CR>
+nmap <silent> <leader>Qs :so $MYVIMRC<CR>
 
 " Remap j and k to act as expected when used on long, wrapped, lines
 nnoremap j gj
@@ -437,6 +437,14 @@ vnoremap v <esc>
 
 " vertical split
 nnoremap <leader>w <C-w>v<C-w>l
+" horizontal split
+nnoremap <leader>q :sp<cr>
+
+" navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 nmap <leader>gg :Git<space>
 nmap <leader>gs :Gstatus<cr>
@@ -476,14 +484,14 @@ nnoremap <leader>s :w<cr>
 cmap w!! w !sudo tee % >/dev/null
 
 " prepare a TopCoder file
-nnoremap <leader>o :set expandtab shiftwidth=2 sts=2<cr>:%s/\t/  /<cr>:call RTrim()<cr>
+"nnoremap <leader>o :set expandtab shiftwidth=2 sts=2<cr>:%s/\t/  /<cr>:call RTrim()<cr>
 
 compiler gcc
 set errorformat^=%-G%f:%l:\ required\ from%m
 
 " font shortcuts
 command! Hifont set guifont=Consolas\ 16
-command! Bigfont set guifont=Consolas\ 13
+command! Bigfont set guifont=Consolas\ 12
 command! Smallfont set guifont=Monospace\ 9
 command! Tinyfont set guifont=Terminus\ 8
 
