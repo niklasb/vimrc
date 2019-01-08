@@ -75,11 +75,29 @@ filetype plugin indent on
 
 set nomodeline
 
-set termencoding=utf-8
-set encoding=utf-8
+if has("gui_running")
+  set visualbell t_vb=
+  set nomousehide
 
-set term=xterm-256color
-set t_ut=
+  set guifont=Consolas\ 12
+
+  set guioptions-=l " no left scrollbar
+  set guioptions-=L " no left scrollbar
+  set guioptions-=r " no right scrollbar
+  set guioptions-=R " no right scrollbar
+  set guioptions-=T " no toolbar
+  set guioptions-=m " no menu
+
+  set lazyredraw
+else
+  set ttyfast
+  set termencoding=utf-8
+  set term=xterm-256color
+  set t_ut=
+endif
+
+
+set encoding=utf-8
 
 "set autoread
 
@@ -506,6 +524,8 @@ set spelllang=en_us
 
 set updatetime=300
 
+""" ccls
+
 "if executable('ccls')
    "au User lsp_setup call lsp#register_server({
       "\ 'name': 'ccls',
@@ -515,3 +535,9 @@ set updatetime=300
       "\ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
       "\ })
 "endif
+
+""" Ack/ag
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
