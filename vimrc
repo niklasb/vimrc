@@ -93,6 +93,7 @@ else
   set ttyfast
   set termencoding=utf-8
   set term=xterm-256color
+  set t_Co=256
   set t_ut=
 endif
 
@@ -250,7 +251,7 @@ set nostartofline
 set backspace=indent,eol,start
 
 " figure indentation on opening
-autocmd BufReadPost * :silent !YAIFAMagic
+"autocmd BufReadPost * :silent !Yaifa
 
 
 """""""""""" Indentation """"""""""""
@@ -341,6 +342,12 @@ augroup solidity
   au!
   autocmd BufNewFile,BufRead *.sol set syntax=solidity
 augroup END
+
+"""""""""""" Mozilla """""""""""""
+
+autocmd BufNewFile,BufRead *.ipdl set syntax=cpp
+autocmd BufNewFile,BufRead *.ipdlh set syntax=cpp
+autocmd BufNewFile,BufRead *.jsm set syntax=javascript
 
 """""""""""" Mappings """"""""""""
 
@@ -477,6 +484,8 @@ nmap <leader>gl :Glog<cr>
 nmap <leader>gr :Gread<cr>
 nmap <leader>gw :Gwrite<cr>
 nmap <leader>gp :Git push<cr>
+
+nmap <leader>dead I1.8457939563e-314<esc>
 
 vmap <leader>gg :Git<space>
 vmap <leader>gs :Gstatus<cr>
