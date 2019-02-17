@@ -110,7 +110,9 @@ set switchbuf=useopen,usetab
 let mapleader=","
 
 " change to file directory when switching to a file buffer
-autocmd BufEnter * silent! lcd %:p:h
+augroup pwd
+  autocmd BufEnter * silent! lcd %:p:h
+augroup END
 
 """""""""""" Persistency """"""""""""
 
@@ -336,18 +338,19 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
-""""""""""" Solidity """""""""""""
+""""""""""" Extra file types """""""""""""
 
-augroup solidity
+augroup highlighting
   au!
   autocmd BufNewFile,BufRead *.sol set syntax=solidity
+
+  autocmd BufNewFile,BufRead *.ipdl set syntax=cpp
+  autocmd BufNewFile,BufRead *.ipdlh set syntax=cpp
+  autocmd BufNewFile,BufRead *.jsm set syntax=javascript
+
+  autocmd BufNewFile,BufRead *.kmk set syntax=make
 augroup END
 
-"""""""""""" Mozilla """""""""""""
-
-autocmd BufNewFile,BufRead *.ipdl set syntax=cpp
-autocmd BufNewFile,BufRead *.ipdlh set syntax=cpp
-autocmd BufNewFile,BufRead *.jsm set syntax=javascript
 
 """""""""""" Mappings """"""""""""
 
@@ -485,7 +488,7 @@ nmap <leader>gr :Gread<cr>
 nmap <leader>gw :Gwrite<cr>
 nmap <leader>gp :Git push<cr>
 
-nmap <leader>dead I1.8457939563e-314<esc>
+nmap <leader>dead i1.8457939563e-314<esc>
 
 vmap <leader>gg :Git<space>
 vmap <leader>gs :Gstatus<cr>
