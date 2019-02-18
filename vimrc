@@ -116,6 +116,7 @@ augroup END
 
 """""""""""" Persistency """"""""""""
 
+call system('mkdir -p ~/.vimundo')
 set undofile
 set undodir=~/.vimundo
 
