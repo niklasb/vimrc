@@ -67,6 +67,7 @@ Plugin 'tomlion/vim-solidity'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'prabirshrestha/async.vim'
 Plugin 'prabirshrestha/vim-lsp'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 filetype plugin indent on
@@ -137,7 +138,11 @@ set history=1000
 """""""""""" Basic UI """"""""""""
 
 set winaltkeys=no
-set mouse=a
+if has("gui_running")
+  set mouse=a
+else
+  set mouse=
+endif
 
 set scrolloff=3
 set scrolljump=5
@@ -153,7 +158,7 @@ set number
 
 syntax on
 set synmaxcol=1000
-syntax sync minlines=200
+syntax sync minlines=2000
 
 set spr  " split right
 set sb   " split below
@@ -172,8 +177,8 @@ set statusline=\ %{winnr()}:\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?C
 
 set laststatus=2  " Always display the status line
 
-set clipboard+=unnamed
-set clipboard+=+
+"set clipboard+=unnamed
+"set clipboard+=+
 
 " command-line editing
 set wildmenu
@@ -350,6 +355,7 @@ augroup highlighting
   autocmd BufNewFile,BufRead *.jsm set syntax=javascript
 
   autocmd BufNewFile,BufRead *.kmk set syntax=make
+  autocmd BufNewFile,BufRead *.sb set syntax=scheme
 augroup END
 
 
@@ -470,10 +476,10 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>q :sp<cr>
 
 " navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
 
 nmap <leader>gg :Git<space>
 nmap <leader>gs :Gstatus<cr>
