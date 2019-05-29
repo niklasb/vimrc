@@ -349,6 +349,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11'
 augroup highlighting
   au!
   autocmd BufNewFile,BufRead *.sol set syntax=solidity
+  autocmd BufNewFile,BufRead *.dockerfile set syntax=Dockerfile
 
   autocmd BufNewFile,BufRead *.ipdl set syntax=cpp
   autocmd BufNewFile,BufRead *.ipdlh set syntax=cpp
