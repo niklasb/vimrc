@@ -177,8 +177,8 @@ set statusline=\ %{winnr()}:\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?C
 
 set laststatus=2  " Always display the status line
 
-set clipboard+=unnamed
-set clipboard+=+
+"set clipboard+=unnamed
+"set clipboard+=+
 
 " command-line editing
 set wildmenu
