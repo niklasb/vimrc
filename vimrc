@@ -461,8 +461,13 @@ nmap <leader>a :Ack<space>
 nmap <leader>S :Sscratch<cr>
 
 " OS copy and paste
-map <leader>p "+p
-vnoremap <leader>y "+y
+if executable('clip.exe')
+  map <leader>p :r !powershell.exe Get-Clipboard<cr>
+  vnoremap <silent> <leader>y :'<,'>:w !sh -c 'cat \| clip.exe'<cr><cr>
+else
+  map <leader>p "+p
+  vnoremap <leader>y "+y
+endif
 
 " reselect pasted text
 nnoremap <leader>v V`]
