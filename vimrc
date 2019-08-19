@@ -17,7 +17,7 @@ Plugin 'kien/ctrlp.vim'
 "Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'tomtom/tlib_vim'
+Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
@@ -68,6 +68,7 @@ Plugin 'tomlion/vim-solidity'
 "Plugin 'prabirshrestha/async.vim'
 "Plugin 'prabirshrestha/vim-lsp'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'Vimjas/vim-python-pep8-indent'
 
 call vundle#end()
 filetype plugin indent on
@@ -96,6 +97,10 @@ else
   set term=xterm-256color
   set t_Co=256
   set t_ut=
+
+  if has("termguicolors")
+    set termguicolors
+  endif
 endif
 
 
@@ -191,14 +196,10 @@ let g:ctrlp_custom_ignore = '\.git$'
 
 if has("gui_running")
   colorscheme molokai
-  "colorscheme base16-tomorrow-night
-  "colorscheme base16-monokai
   set guicursor=a:block-Cursor
   set guicursor+=n-v:blinkon0  " cursors shouldn't blink.
 else
   colorscheme molokai
-  "colorscheme slate   " for < 256 colors
-  set t_Co=256
 endif
 
 
@@ -294,6 +295,9 @@ vnoremap / /\V
 
 " break out of a search
 nnoremap <leader><space> :noh<cr>
+
+" redraw screen
+nnoremap <leader>x :redraw!<cr>
 
 
 """""""""""" Color schemes """"""""""""
