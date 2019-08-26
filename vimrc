@@ -69,6 +69,7 @@ Plugin 'tomlion/vim-solidity'
 "Plugin 'prabirshrestha/vim-lsp'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'tell-k/vim-autopep8'
 
 call vundle#end()
 filetype plugin indent on
@@ -347,6 +348,9 @@ let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'passive_filetypes': [] }
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
+let g:syntastic_python_checkers = ['python', 'mypy', 'flake8']
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_mypy_args = '--ignore-missing-imports'
 
 """"""""""" Extra file types """""""""""""
 
@@ -454,6 +458,7 @@ nmap <leader>r :YRShow<CR>
 
 " Syntastic
 nmap <leader>c :SyntasticCheck<cr>
+nmap <leader>l :Autopep8<cr>
 
 " Gundo
 nnoremap <f4> :GundoToggle<cr>
