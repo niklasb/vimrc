@@ -343,6 +343,7 @@ au FileType tex set indentexpr=
 
 """""""""""" Syntastic """""""""""
 
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
@@ -458,6 +459,7 @@ nmap <leader>r :YRShow<CR>
 
 " Syntastic
 nmap <leader>c :SyntasticCheck<cr>
+nmap <leader>C :SyntasticReset<cr>
 nmap <leader>l :Autopep8<cr>
 
 " Gundo
